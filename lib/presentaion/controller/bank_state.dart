@@ -23,8 +23,6 @@ class BankState extends Equatable {
 
   final int currentIndex;
   final RequestState changeBottomState;
-  // final List<Widget> screens;
-
   final String name;
   final RequestState selectNameValueState;
 

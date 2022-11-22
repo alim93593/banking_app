@@ -5,14 +5,15 @@ import 'package:banking_app/domain/usecases/add_user_to_bankdb_usecase.dart';
 import 'package:banking_app/domain/usecases/create_data_base_usecase.dart';
 import 'package:banking_app/domain/usecases/get_data_from_data_base_usecase.dart';
 import 'package:banking_app/domain/usecases/update_data_use_case.dart';
-import 'package:banking_app/presentaion/controller/bank_bloc.dart';
 import 'package:get_it/get_it.dart';
+
+import '../../presentaion/controller/bank_bloc.dart';
 
 final sl = GetIt.instance;
 
 class ServicesLocator {
   void init() {
-    //// Bloc
+   //// Bloc
     sl.registerFactory(
       () => BankBloc(
         sl(),

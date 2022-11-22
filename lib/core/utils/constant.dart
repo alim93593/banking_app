@@ -7,7 +7,7 @@ const String tableTransferData='transfer';
 const String databaseName="bank.db";
 const String tableName="user";
 const  Color bluishClr = Color(0XFF4e5ae8);
-const primaryClr = bluishClr;
+const primaryClr = Colors.teal;
 
 TextStyle  subHeadingStyle() =>const TextStyle(
     fontSize: 24,

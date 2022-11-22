@@ -1,9 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, avoid_print
 
-import 'package:banking_app/core/services/services_locator.dart';
 import 'package:banking_app/core/utils/main_navigation_funcation.dart';
 import 'package:banking_app/presentaion/controller/bank_bloc.dart';
-import 'package:banking_app/presentaion/controller/bank_event.dart';
 import 'package:banking_app/presentaion/controller/bank_state.dart';
 import 'package:banking_app/presentaion/screens/transfer_data_screen/transfer_data_screen.dart';
 import 'package:flutter/material.dart';
@@ -14,24 +12,9 @@ class UserTransferDataScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (BuildContext context) {
-        return BankBloc(sl(), sl(), sl(), sl(),)..add(GetalluserFromDatabaseEvent());
-      },
-      child: BlocBuilder<BankBloc, BankState>(
+    return BlocBuilder<BankBloc, BankState>(
         builder: (context, state) {
           return Scaffold(
-            appBar: AppBar(
-              centerTitle: true,
-              title: const Text(
-                'Users Details',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
             body: Padding(
               padding: const EdgeInsets.all(12.0),
               child: ListView.separated(
@@ -110,7 +93,6 @@ class UserTransferDataScreen extends StatelessWidget {
             ),
           );
         },
-      ),
     );
   }
 }

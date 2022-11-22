@@ -2,6 +2,7 @@
 
 import 'package:equatable/equatable.dart';
 
+
 abstract class BankEvent extends Equatable{
   const BankEvent();
 

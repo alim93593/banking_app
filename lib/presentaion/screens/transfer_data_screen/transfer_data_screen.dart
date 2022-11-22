@@ -52,13 +52,7 @@ class _UpdateUserTransferDataScreenState extends State<UpdateUserTransferDataScr
   @override
   Widget build(BuildContext context) {
 
-    return BlocProvider(
-      create: (BuildContext context) {
-        return BankBloc(sl(), sl(), sl(), sl(),)
-          ..add(CreateDatabaseEvent())
-          ..add(GetalluserFromDatabaseEvent());
-      },
-      child: BlocBuilder<BankBloc, BankState>(
+    return  BlocBuilder<BankBloc, BankState>(
         builder: (context, state) {
           userNameController.text = widget.name;
           emailController.text = widget.email;
@@ -214,7 +208,6 @@ class _UpdateUserTransferDataScreenState extends State<UpdateUserTransferDataScr
             ),
           );
         },
-      ),
     );
   }
 }

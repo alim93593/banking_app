@@ -18,26 +18,9 @@ class BankUserScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var bloc = BankBloc(sl(), sl(), sl(), sl(),);
-    return BlocProvider(
-      create: (BuildContext context) {
-        return BankBloc(sl(), sl(), sl(), sl(),)
-          ..add(CreateDatabaseEvent())
-          ..add(GetalluserFromDatabaseEvent());
-      },
-      child: BlocBuilder<BankBloc, BankState>(
+    return  BlocBuilder<BankBloc, BankState>(
         builder: (context, state) {
           return Scaffold(
-            appBar: AppBar(
-              centerTitle: true,
-              title: const Text(
-                'Add User',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
             body: Form(
               key: formKey,
               child: Padding(
@@ -121,7 +104,6 @@ class BankUserScreen extends StatelessWidget {
             ),
           );
         },
-      ),
     );
   }
 }
