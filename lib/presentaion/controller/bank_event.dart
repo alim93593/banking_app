@@ -34,14 +34,3 @@ class UpdateUserInDataBaseEvent extends BankEvent{
 
   const UpdateUserInDataBaseEvent({required this.id,required this.status});
 }
-
-class LoadForum extends BankEvent{
-  @override
-  List<Object> get props => [];
-
-}
-class LoadFavorite extends BankEvent{
-  @override
-  List<Object> get props => [];
-
-}

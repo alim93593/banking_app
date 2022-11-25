@@ -22,14 +22,12 @@ class BankState extends Equatable {
   final String updateUserMessage;
 
   final int currentIndex;
-  final RequestState appStart;
   final RequestState changeBottomState;
 
 
   const BankState(
       {this.changeBottomState = RequestState.loading,
       this.updateUser = 0,
-      this.appStart = RequestState.loaded,
       this.updateUserMessage = '',
       this.updateUserState = RequestState.loading,
       this.currentIndex = 0,
@@ -56,13 +54,11 @@ class BankState extends Equatable {
     RequestState? updateUserState,
     String? updateUserMessage,
     int? currentIndex,
-    RequestState? appStart,
     RequestState? changeBottomState,
   }) {
     return BankState(
         changeBottomState: changeBottomState ?? this.changeBottomState,
         updateUser: updateUser ?? this.updateUser,
-        appStart: appStart ?? this.appStart,
         updateUserMessage: updateUserMessage ?? this.updateUserMessage,
         updateUserState: updateUserState ?? this.updateUserState,
         currentIndex: currentIndex ?? this.currentIndex,
@@ -92,7 +88,6 @@ class BankState extends Equatable {
         updateUser,
         updateUserMessage,
         updateUserState,
-        appStart
         // screens,
       ];
 }
