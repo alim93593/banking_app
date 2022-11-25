@@ -62,14 +62,16 @@ class CustomBottomNavBar extends StatelessWidget {
               currentIndex: sl<BankBloc>().currentIndex,
               selectedFontSize: 11,
               onTap: (index) {
-                if (index == 0) {
-                   BlocProvider.of<BankBloc>(context)
+                BlocProvider.of<BankBloc>(context)
                     .add(ChangeBottomNavBarEvent(currentIndex: index));
-                }
-                if (index == 1) {
-                  BlocProvider.of<BankBloc>(context)
-                      .add(ChangeBottomNavBarEvent(currentIndex: index));
-                }
+                // if (index == 0) {
+                //    BlocProvider.of<BankBloc>(context)
+                //     .add(ChangeBottomNavBarEvent(currentIndex: index));
+                // }
+                // if (index == 1) {
+                //   BlocProvider.of<BankBloc>(context)
+                //      .add(ChangeBottomNavBarEvent(currentIndex: index));
+                // }
               },
             ),
           ),
