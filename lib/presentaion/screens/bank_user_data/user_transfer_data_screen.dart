@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class UserTransferDataScreen extends StatelessWidget {
-  const UserTransferDataScreen({Key? key}) : super(key: key);
+   const UserTransferDataScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

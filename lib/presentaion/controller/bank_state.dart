@@ -22,18 +22,16 @@ class BankState extends Equatable {
   final String updateUserMessage;
 
   final int currentIndex;
+  final RequestState appStart;
   final RequestState changeBottomState;
-  final String name;
-  final RequestState selectNameValueState;
+
 
   const BankState(
       {this.changeBottomState = RequestState.loading,
       this.updateUser = 0,
+      this.appStart = RequestState.loaded,
       this.updateUserMessage = '',
       this.updateUserState = RequestState.loading,
-      this.name = "",
-      this.selectNameValueState = RequestState.loading,
-      // this.screens=const[BankUserScreen(),UserTransferDataScreen(),UserTransferDataScreen(),],
       this.currentIndex = 0,
       this.createDb,
       this.createDbState = RequestState.loading,
@@ -44,6 +42,41 @@ class BankState extends Equatable {
       this.addUser = 0,
       this.addUserMessage = '',
       this.addUserState = RequestState.loading});
+  BankState copyWith({
+    Database? createDb,
+    RequestState? createDbState,
+    String? createDbMessage,
+    List<User>? allUser,
+    RequestState? getAllUserState,
+    String? getAllUserMessage,
+    int? addUser,
+    RequestState? addUserState,
+    String? addUserMessage,
+    int? updateUser,
+    RequestState? updateUserState,
+    String? updateUserMessage,
+    int? currentIndex,
+    RequestState? appStart,
+    RequestState? changeBottomState,
+  }) {
+    return BankState(
+        changeBottomState: changeBottomState ?? this.changeBottomState,
+        updateUser: updateUser ?? this.updateUser,
+        appStart: appStart ?? this.appStart,
+        updateUserMessage: updateUserMessage ?? this.updateUserMessage,
+        updateUserState: updateUserState ?? this.updateUserState,
+        currentIndex: currentIndex ?? this.currentIndex,
+        createDb: createDb ?? this.createDb,
+        createDbState: createDbState ?? this.createDbState,
+        createDbMessage: createDbMessage ?? this.createDbMessage,
+        allUser: allUser ?? this.allUser,
+        getAllUserMessage: getAllUserMessage ?? this.getAllUserMessage,
+        getAllUserState: getAllUserState ?? this.getAllUserState,
+        addUser: addUser ?? this.addUser,
+        addUserMessage: addUserMessage ?? this.addUserMessage,
+        addUserState: addUserState ?? this.addUserState);
+  }
+
   @override
   List<Object?> get props => [
         createDb,
@@ -56,11 +89,10 @@ class BankState extends Equatable {
         addUserMessage,
         addUserState,
         currentIndex,
-        name,
-        selectNameValueState,
         updateUser,
         updateUserMessage,
         updateUserState,
+        appStart
         // screens,
       ];
 }

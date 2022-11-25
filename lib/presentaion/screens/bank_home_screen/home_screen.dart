@@ -16,13 +16,13 @@ class BankHomeScreen extends StatelessWidget {
     return BlocProvider(
       create: (BuildContext context) {
         return sl<BankBloc>()
-          ..add(GetalluserFromDatabaseEvent())
           ..add(CreateDatabaseEvent())
           ..add(GetalluserFromDatabaseEvent());
+
       },
       child: Scaffold(
         // appBar: CustomAppBar(),
-          body: CustomBottomNavBar(),
+        body: CustomBottomNavBar(),
       ),
       // body: Column(
       //   mainAxisAlignment: MainAxisAlignment.center,

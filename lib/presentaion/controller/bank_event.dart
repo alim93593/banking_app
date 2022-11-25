@@ -11,13 +11,13 @@ abstract class BankEvent extends Equatable{
 }
 class CreateDatabaseEvent extends BankEvent{ }
 class GetalluserFromDatabaseEvent extends BankEvent{ }
-class GetValueOfComboBoxEvent extends BankEvent{
-  final String name;
-  const GetValueOfComboBoxEvent(this.name);
-}
+// class GetValueOfComboBoxEvent extends BankEvent{
+//   final String name;
+//   const GetValueOfComboBoxEvent(this.name);
+// }
 class ChangeBottomNavBarEvent extends BankEvent{
-   int currentIndex;
-   ChangeBottomNavBarEvent({required this.currentIndex});
+   final  int currentIndex;
+   const ChangeBottomNavBarEvent({required this.currentIndex});
 }
 class AddUserToDatabaseEvent extends BankEvent{
  final String name;
@@ -33,4 +33,15 @@ class UpdateUserInDataBaseEvent extends BankEvent{
   final int status;
 
   const UpdateUserInDataBaseEvent({required this.id,required this.status});
+}
+
+class LoadForum extends BankEvent{
+  @override
+  List<Object> get props => [];
+
+}
+class LoadFavorite extends BankEvent{
+  @override
+  List<Object> get props => [];
+
 }
